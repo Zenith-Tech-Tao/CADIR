@@ -1,0 +1,23 @@
+contacts = [
+    "username_1",
+    "username_2",
+    "username_3"
+]
+
+
+def create_message(name):
+    return f"""{name}, привет!
+
+Здесь разместите текст своего сообщения."""
+
+
+with open("messages.txt", "w", encoding="utf-8") as file:
+    for contact in contacts:
+        file.write("=" * 50 + "\n")
+        file.write(f"Получатель: {contact}\n\n")
+        file.write(create_message(contact))
+        file.write("\n\n")
+
+
+print(f"Подготовлено сообщений: {len(contacts)}")
+print("Файл messages.txt создан.")
